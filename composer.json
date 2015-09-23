@@ -1,0 +1,21 @@
+{
+    "name": "phidias/api-utilities",
+    "description": "Utility and helper classes for Phidias API",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Santiago Cortés",
+            "email": "santiago.cortes@phidias.com"
+        }
+    ],
+
+    "autoload": {
+        "psr-4": {
+            "Phidias\\Api\\Utilities\\": "src/"
+        }
+    },
+
+    "require": {
+        "phidias/api": "*"
+    }
+}
