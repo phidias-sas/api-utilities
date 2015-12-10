@@ -6,9 +6,11 @@ class Db
     public static function filterCollection($collection, $request)
     {
         $parameters = $request->getQueryParams();
-        
+
         if (isset($parameters["limit"])) {
             $collection->limit($parameters["limit"]);
+        } else {
+            $collection->limit(20);
         }
 
         if (isset($parameters["page"])) {
