@@ -28,7 +28,7 @@ class Db
                 $isDescending  = $firstChar == "-";
             }
 
-            $collection->orderBy($sortAttribute, $isDescending);
+            $collection->orderBy($sortAttribute, $isDescending, true);
         }
 
     }
