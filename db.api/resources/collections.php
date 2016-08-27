@@ -15,8 +15,9 @@ return [
 
                 $records  = $output->find()->fetchAll();
                 $count    = count($records);
-                $page     = $output->getPage();
-                $pageSize = $output->getLimit();
+
+                $page     = isset($output->meta->page)  ? $output->meta->page  : $output->getPage();
+                $pageSize = isset($output->meta->limit) ? $output->meta->limit : $output->getLimit();
                 $total    = isset($output->total) ? $output->total : (  (0 < $count && $count < $pageSize) ? $count + ($page-1)*$pageSize : $output->count()  );
 
                 $response->header("X-Phidias-Collection-Page",      $page);
